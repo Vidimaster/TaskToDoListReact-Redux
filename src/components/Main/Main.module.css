@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.container {
+
+    margin: 16px auto;
+    padding: 8px;
+    display: flex;
+
+    flex-direction: column;
+    width: 50%;
+    background-color: LightGray;
+    box-shadow: 8px 4px 4px grey;
+    border-radius: 8px;
+}
+
+.title {
+    color: grey;
+    font-size: 50px;
+    margin: 0 auto;
+    font-weight: 200;
+}
+
+
+
+.item_input {
+    background-color: white;
+    font-size: 20px;
+    zoom: 2;
+    font-weight: 200;
+    padding: 8px 8px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+}
+
+.item_input_textfield {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-style: italic;
+    margin-left: 4px;
+    width: 80%;
+}
+
+.item_input_textfield::placeholder {
+    color: rgba(124, 124, 124, .5);
+}
+
+
+.tab_container {
+    background-color: white;
+    padding: 16px;
+    display: flex;
+    font-size: 18px;
+    color: grey;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 8px;
+}
+
+.tab_container_center {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.item_left {
+    grid-column: 1 / span 1;
+    display: flex;
+    align-items: center;
+}
+
+.item_right {
+    grid-column: 3 / span 1;
+    justify-self: end;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 16px;
+    text-align: center;
+    color: grey;
+    border-radius: 10px;
+    background-color: white;
+    border: solid;
+    border-width: 0.4px;
+    border-color: rgba(124, 124, 124, .5);
+    cursor: pointer;
+}
+
+.just_button {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 16px;
+    text-align: center;
+    color: grey;
+    border-radius: 10px;
+    background-color: white;
+    border: solid;
+    border-width: 0.4px;
+    border-color: rgba(124, 124, 124, .5);
+
+}
+
+.just_button_pressed {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 16px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: rgb(59, 59, 59);
+    border: solid;
+    border-width: 0.4px;
+    border-color: rgba(124, 124, 124, .5);
+
+}
+
+.arrow_button {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 50px;
+}

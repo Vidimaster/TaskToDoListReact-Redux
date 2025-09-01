@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider, useDispatch } from 'react-redux';
+import store from './redux/store';
+
+import { Main } from "./components/Main/Main";
+
+import { useState } from "react";
+import { fetchProducts } from './redux/services/ShowList';
+import { setInitial } from './redux/slices/EditSlice';
+
+const AppWrapper = () => {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  )
+}
 
 function App() {
+
+  const [state, setState] = useState([]);
+  const dispatch = useDispatch();
+  const data = dispatch(fetchProducts(0));
+  data.unwrap()
+    .then((PromiseResult) => {
+      setState(PromiseResult)
+      dispatch(setInitial({
+        items: PromiseResult
+      }))
+    })
+    .catch((rejected) => {
+      console.log();
+    });
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Main prop={state} />
+    </>
+
   );
 }
 
-export default App;
+export default AppWrapper;

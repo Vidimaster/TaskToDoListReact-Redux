@@ -1,0 +1,29 @@
+.item {
+    background-color: white;
+    font-size: 20px;
+    color: grey;
+    zoom: 2;
+    border-top: 1px solid rgba(124, 124, 124, .5);
+    font-weight: 200;
+    padding: 0px 8px;
+    border-width: 0.4px;
+
+    display: flex;
+}
+
+.item label {
+    overflow: auto;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.item_input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.item_inactive {
+    text-decoration: line-through;
+}
